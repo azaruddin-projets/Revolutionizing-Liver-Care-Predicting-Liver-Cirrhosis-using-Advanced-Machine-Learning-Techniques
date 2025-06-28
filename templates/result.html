@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('/static/background.png');
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    .message-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      display: inline-block;
+      max-width: 600px;
+    }
+    h1.safe {
+      color: #2ecc71;
+    }
+    h1.danger {
+      color: #e74c3c;
+    }
+    .advice {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #f1c40f;
+    }
+    .confidence {
+      margin-top: 25px;
+      font-size: 1.2rem;
+      color: #3498db;
+    }
+    a {
+      
+      margin-top: 30px;
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h1 class="{{ risk_level }}">{{ message }}</h1>
+<p class="advice">{{ advice }}</p>
+<p>🧠 Confidence → Healthy: {{ healthy_conf }}%, Diseased: {{ diseased_conf }}%</p>
+    </div>
+    <a href="{{ url_for('index') }}">← Go back to form</a>
+  </div>
+</body>
+</html>
